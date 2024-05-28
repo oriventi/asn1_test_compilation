@@ -1,0 +1,35 @@
+Ex3 DEFINITIONS ::=
+BEGIN
+    University ::= ENUMERATED {
+        lmu (0),
+        dhbw (1),
+        tum (2)
+    }
+
+    Student ::= SEQUENCE {
+        university University,
+        degree UTF8String,
+        studentNumber INTEGER (1000..9999),
+        avgGrade REAL
+    }
+END
+
+-- 1. University muss extra deklariert sein
+-- 2. Enumerated Werte müssen klein geschrieben sein
+-- 3. SEQUENCE elemente dürfen nicht neu deklariert werden
+-- 4. INTEGER(1000-9999) ist nicht erlaubt. Richtig wäre INTEGER (1000..9999)
+
+
+-- Ex3 DEFINITIONS ::=
+-- BEGIN
+--     Student ::= SEQUENCE {
+--         university ::= ENUMERATED {
+--             LMU (0)
+--             DHBW (1)
+--             TUM (2)
+--         },
+--         degree ::= UTF8String,
+--         studentNumber ::= INTEGER(1000-9999),
+--         avgGrade ::= REAL
+--     }
+-- END
